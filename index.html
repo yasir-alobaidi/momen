@@ -294,6 +294,10 @@
     }
     .foot-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--wh); }
     .foot-sub { font-size: .74rem; color: rgba(255,255,255,.32); margin-top: .18rem; }
+    .foot-contact { font-size: .76rem; color: rgba(255,255,255,.5); display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; }
+    .foot-contact a { transition: color .2s; }
+    .foot-contact a:hover { color: var(--amber); }
+    .foot-dot { opacity: .4; }
     .foot-copy { font-size: .76rem; color: rgba(255,255,255,.32); }
     .foot-link { color: rgba(255,255,255,.5); text-decoration: underline; text-underline-offset: 2px; transition: color .2s; }
     .foot-link:hover { color: var(--amber); }
@@ -590,6 +594,11 @@
   <div>
     <div class="foot-brand">Mo'men Store · مؤمن ستور</div>
     <div class="foot-sub">Your neighborhood convenience store, Amman, Jordan</div>
+  </div>
+  <div class="foot-contact">
+    <a href="tel:+962799793446">+962 7 9979 3446</a>
+    <span class="foot-dot">·</span>
+    <span>Ibrahim Bakr, Amman, Jordan</span>
   </div>
   <div class="foot-copy">© 2026 Mo'men Store. All rights reserved. · <a href="privacy.html" class="foot-link">Privacy Policy</a></div>
 </footer>

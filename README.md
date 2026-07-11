@@ -49,6 +49,26 @@
 
 ---
 
+## 3.5 Landing Page Audit — Action Items
+
+> ⚠️ Added 2026-07-11 — findings from reviewing `index.html` / `privacy.html` against this checklist and current Google documentation (developers.google.com/my-business, developers.google.com/identity/protocols/oauth2). Content/design work is solid; gaps below are what's standing between this and submission.
+
+### Blocking — do this first
+- [ ] **3.5.1** Migrate off the GitHub Pages subdomain (duplicate of 2.1/2.2, elevated here because it's load-bearing for two separate things, not just "professional appearance"):
+  - No domain-matched business email is possible on a `github.io` subdomain — Google's FAQ lists this as how you demonstrate legitimacy for Basic API Access
+  - The OAuth consent screen (Phase 6.6) requires a home page on a domain you can verify ownership of via Search Console — shared subdomains don't qualify
+
+### Content fixes — do before submitting
+- [ ] **3.5.2** Reconcile hours: `index.html` (visible copy + JSON-LD) shows every day 9:00 AM–10:00 PM; the table in Section 3 shows the live GBP as split hours (Mon-Wed 8AM-12PM; Thu-Sun 9AM-5PM), still flagged "Verify." Confirm which is actually current and make both match.
+- [ ] **3.5.3** Confirm address string: `index.html` uses "Ibrahim Bakr" everywhere (visible copy + schema `streetAddress`); Section 3 lists the GBP value as "Ibrahim Bakr Street, Amman." Copy the literal string off the live listing — this doc requires character-for-character matching.
+- [x] **3.5.4** Complete footer NAP per 2.3: footer currently has business name + city only, no street address or phone. Full contact info exists in the "Store Information" section but isn't duplicated into the footer itself.
+- [ ] **3.5.5** Add a Terms of Service page per 2.4. Lower priority than it sounds — Google's OAuth docs list ToS as *optional* alongside a required privacy policy — but still cheap to add.
+
+### Decision needed — not resolved anywhere else in this doc
+- [ ] **3.5.6** Decide what privacy policy backs RepuHub's *own* production OAuth consent screen. Phase 6.6 currently assumes reusing momenstore.com's `privacy.html`, but that policy is explicitly scoped to a brochure site with no forms/accounts — it says nothing about OAuth, reviews, or business-location data. The Basic API Access request (Phase 5) is fine using Mo'men Store as the qualifying GBP; Google explicitly allows the qualifying profile to be the applicant's own business rather than the product itself. But the consent screen RepuHub's *customers* see needs a privacy policy that actually discloses RepuHub's data practices, hosted on the same domain as whatever home page is linked from it. Given Phase 6.4's redirect URIs already point at `repuhub.xyz` / `repuhub.ai`, this likely means a separate RepuHub-branded privacy policy — not momenstore.com's — needs drafting before 6.6.
+
+---
+
 ## 4. Step-by-Step Readiness Checklist
 
 ### Phase 1: Physical Verification (Days 52–54 / by July 13)
@@ -112,7 +132,7 @@
   - Prod: `https://api.repuhub.ai/api/v1/integrations/google/oauth/callback/`
 - [ ] **6.5** ⚠️ **Remove GBP mock env vars** from `deploy/.env.staging` once real credentials work (see `CLAUDE.md` §Removing the mock)
 - [ ] **6.6** ⚠️ **Submit OAuth consent screen for verification** (required for production use beyond 100 users):
-  - Requires privacy policy URL (from Phase 2)
+  - Requires privacy policy URL — ⚠️ see **3.5.6** (unresolved): confirm this is a RepuHub-scoped policy, not momenstore.com's, before submitting
   - Verification can take 4-6 weeks — submit early
 
 ---
