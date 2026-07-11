@@ -260,6 +260,8 @@
     .info-blk { margin-bottom: 1.8rem; }
     .info-lbl { font-size: .71rem; font-weight: 600; text-transform: uppercase; letter-spacing: .11em; color: var(--amber); margin-bottom: .45rem; }
     .info-val { font-size: .95rem; color: var(--ink); line-height: 1.68; }
+    .info-val a { color: var(--amber); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; transition: color .2s; }
+    .info-val a:hover { color: var(--forest); }
     .hours { display: grid; grid-template-columns: 1fr auto; gap: .45rem 1.6rem; }
     .h-day { font-size: .9rem; font-weight: 500; color: var(--ink); }
     .h-time { font-size: .9rem; color: var(--dim); }
@@ -319,6 +321,43 @@
       .rv { transition: none; }
     }
   </style>
+
+  <!-- LocalBusiness structured data, sourced from the Google Business Profile.
+       Keep this in sync with the profile — add a "url" field once the site is live at a permanent domain,
+       and refresh aggregateRating periodically (or wire it to the Business Profile API). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["ConvenienceStore", "GroceryStore"],
+    "name": "Mo'men Store",
+    "alternateName": "مؤمن ستور",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ibrahim Bakr",
+      "addressLocality": "Amman",
+      "addressCountry": "JO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 31.8966956,
+      "longitude": 35.8729504
+    },
+    "telephone": "+962 7 9979 3446",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "22:00"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "reviewCount": "5"
+    },
+    "hasMap": "https://maps.app.goo.gl/WcJS1Y3gG8RXXmzTA",
+    "sameAs": ["https://maps.app.goo.gl/WcJS1Y3gG8RXXmzTA"]
+  }
+  </script>
 </head>
 <body>
 
@@ -327,7 +366,7 @@
   <div class="nav-in">
     <div class="logo">
       <span class="logo-en">Mo'men Store</span>
-      <span class="logo-ar">مؤمن ستور</span>
+      <span class="logo-ar" lang="ar">مؤمن ستور</span>
     </div>
     <ul class="nav-links">
       <li><a href="#departments">Shop</a></li>
@@ -363,7 +402,7 @@
     <div class="hero-content">
       <div class="hero-pill">Neighborhood Supermarket · Amman, Jordan</div>
       <h1 class="hero-h1">Fresh Food,<br>Honest Prices.</h1>
-      <span class="hero-ar">طازج كل يوم، بأسعار عادلة</span>
+      <span class="hero-ar" lang="ar">طازج كل يوم، بأسعار عادلة</span>
       <p class="hero-copy">Mo'men Store is your trusted neighborhood supermarket — stocked daily with fresh produce, quality halal meats, bakery goods, and everything your family needs under one roof.</p>
       <div class="hero-acts">
         <a href="#visit" class="btn-cta">Visit Our Store</a>
@@ -389,9 +428,11 @@
   <div class="stat-div"></div>
   <div class="stat"><div class="stat-n">Daily</div><div class="stat-l">Fresh Deliveries</div></div>
   <div class="stat-div"></div>
-  <div class="stat"><div class="stat-n">6am–11pm</div><div class="stat-l">Every Day</div></div>
+  <div class="stat"><div class="stat-n">9am–10pm</div><div class="stat-l">Every Day</div></div>
   <div class="stat-div"></div>
   <div class="stat"><div class="stat-n">Halal</div><div class="stat-l">Certified Meat</div></div>
+  <div class="stat-div"></div>
+  <div class="stat"><div class="stat-n">4.6★</div><div class="stat-l">Google Rating</div></div>
 </div>
 
 <!-- ─── CATEGORIES ────────────────────────────────── -->
@@ -406,42 +447,42 @@
       <div class="cat rv d1">
         <span class="cat-e">🥦</span>
         <div class="cat-en">Fresh Produce</div>
-        <div class="cat-ar">خضروات وفواكه</div>
+        <div class="cat-ar" lang="ar">خضروات وفواكه</div>
         <span class="cat-badge">Daily Fresh</span>
         <span class="cat-shadow">🥦</span>
       </div>
       <div class="cat rv d2">
         <span class="cat-e">🥖</span>
         <div class="cat-en">Bakery &amp; Bread</div>
-        <div class="cat-ar">مخبوزات وخبز</div>
+        <div class="cat-ar" lang="ar">مخبوزات وخبز</div>
         <span class="cat-badge">Baked Daily</span>
         <span class="cat-shadow">🥖</span>
       </div>
       <div class="cat rv d3">
         <span class="cat-e">🥩</span>
         <div class="cat-en">Halal Meat</div>
-        <div class="cat-ar">لحوم حلال</div>
+        <div class="cat-ar" lang="ar">لحوم حلال</div>
         <span class="cat-badge">Butcher Cut</span>
         <span class="cat-shadow">🥩</span>
       </div>
       <div class="cat rv d1">
         <span class="cat-e">🧀</span>
         <div class="cat-en">Dairy &amp; Eggs</div>
-        <div class="cat-ar">ألبان وبيض</div>
+        <div class="cat-ar" lang="ar">ألبان وبيض</div>
         <span class="cat-badge">Local &amp; Imported</span>
         <span class="cat-shadow">🧀</span>
       </div>
       <div class="cat rv d2">
         <span class="cat-e">🫙</span>
         <div class="cat-en">Pantry Essentials</div>
-        <div class="cat-ar">مواد تموينية</div>
+        <div class="cat-ar" lang="ar">مواد تموينية</div>
         <span class="cat-badge">100+ Items</span>
         <span class="cat-shadow">🫙</span>
       </div>
       <div class="cat rv d3">
         <span class="cat-e">🧴</span>
         <div class="cat-en">Household &amp; Care</div>
-        <div class="cat-ar">منزلية ونظافة</div>
+        <div class="cat-ar" lang="ar">منزلية ونظافة</div>
         <span class="cat-badge">Everyday Needs</span>
         <span class="cat-shadow">🧴</span>
       </div>
@@ -496,27 +537,33 @@
 
         <div class="info-blk">
           <div class="info-lbl">📍 Location</div>
-          <div class="info-val">Mo'men Store · Amman, Jordan</div>
+          <div class="info-val">Mo'men Store · Ibrahim Bakr, Amman, Jordan</div>
         </div>
 
         <div class="info-blk">
           <div class="info-lbl">🕐 Opening Hours</div>
           <div class="hours">
-            <span class="h-day">Saturday – Thursday</span>
-            <span class="h-time">6:00 AM – 11:00 PM</span>
-            <span class="h-day">Friday</span>
-            <span class="h-time">8:00 AM – 11:00 PM</span>
+            <span class="h-day">Every Day</span>
+            <span class="h-time">9:00 AM – 10:00 PM</span>
           </div>
         </div>
 
         <div class="info-blk">
           <div class="info-lbl">📞 Contact</div>
-          <div class="info-val">Call or WhatsApp us<br>for orders &amp; inquiries</div>
+          <div class="info-val">
+            <a href="tel:+962799793446">+962 7 9979 3446</a><br>
+            <a href="https://wa.me/962799793446" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="info-blk">
+          <div class="info-lbl">⭐ Google Rating</div>
+          <div class="info-val">4.6 out of 5 <span style="color:var(--dim)">(5 reviews)</span> · <a href="https://search.google.com/local/writereview?placeid=ChIJRdYF4CinHBUR-o8bEAFJa5M" target="_blank" rel="noopener noreferrer">Leave a review</a></div>
         </div>
       </div>
 
       <div class="rv d2">
-        <a href="https://maps.app.goo.gl/1RvRaWDeFA2hm4QF8" target="_blank" rel="noopener noreferrer" class="map-link">
+        <a href="https://maps.app.goo.gl/WcJS1Y3gG8RXXmzTA" target="_blank" rel="noopener noreferrer" class="map-link">
           <div class="map-pat">
             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
               <defs>
@@ -530,7 +577,7 @@
           </div>
           <span class="map-pin">📍</span>
           <div class="map-name">Mo'men Store</div>
-          <div class="map-city">Amman, Jordan</div>
+          <div class="map-city">Ibrahim Bakr, Amman</div>
           <div class="map-cta">Open in Google Maps ↗</div>
         </a>
       </div>
