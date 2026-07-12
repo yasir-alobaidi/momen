@@ -79,8 +79,8 @@
 ## 4. Step-by-Step Readiness Checklist
 
 ### Phase 1: Physical Verification (Days 52–54 / by July 13)
-- [ ] **1.1** Verify physical storefront hours plaque matches digital split hours
-- [ ] **1.2** Confirm store sign reads exactly `Mo'men Store` (no variations)
+- [x] **1.1** Verify physical storefront hours plaque matches digital split hours — ✅ Confirmed 2026-07-12: physical plaque matches the digital hours (8AM–11PM daily, Fri 12PM–11PM)
+- [x] **1.2** Confirm store sign reads exactly `Mo'men Store` (no variations) — ✅ Confirmed 2026-07-12: matches exactly
 - [ ] **1.3** Take timestamped photos of storefront showing sign + hours (useful if Google requests proof)
 
 ### Phase 2: Web Compliance & Custom Domain (Days 54–57 / by July 16)
@@ -96,7 +96,9 @@
 - [ ] **3.2** Add missing profile attributes (accessibility, parking, payment methods, Wi-Fi) — see `ATTRIBUTES-CHECKLIST.md` for a walkthrough to fill out ahead of time
 - [ ] **3.3** Upload high-quality photos: exterior (2-3), interior (2-3), products (3-5)
 - [ ] **3.4** Ensure 2-3 genuine customer reviews exist with professional owner responses
+  - ⚙️ **Prep done:** reply templates for common review scenarios (positive, mixed, complaint types) are in `phase3-review-response-templates.md`, ready to adapt once real reviews are in — reviews themselves still need to be genuine, nothing to draft ahead of time there
 - [ ] **3.5** Add business logo and cover photo if missing
+  - 🛠️ **Note 2026-07-12:** not a hard requirement for Basic API Access — Google's official prerequisites only require a verified 60+ day profile and a business website; a "fully complete" profile (logo included) is recommended for a smoother review, not gating. Fine to deprioritize until after submission if no logo exists yet.
 
 ### Phase 4: Google Cloud Environment (Days 58–59 / by July 18)
 - [ ] **4.1** Log into GCP Console with the **Owner/Manager** Google account of the GBP
