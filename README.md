@@ -102,12 +102,14 @@
 - [ ] **4.1** Log into GCP Console with the **Owner/Manager** Google account of the GBP
 - [ ] **4.2** Create new project (e.g., `momen-store`) — copy **Project Number** from dashboard
 - [ ] **4.3** Enable Google Cloud Billing (link valid payment method — required even for free tiers)
-- [ ] **4.4** ⚠️ **Set up OAuth consent screen** (missing from original checklist):
-  - Navigate to APIs & Services → OAuth consent screen
-  - Choose "External" user type
-  - Fill app name, support email, authorized domain (your custom domain)
-  - Add scopes: `https://www.googleapis.com/auth/business.manage`
+- [ ] **4.4** ⚠️ **Set up the OAuth consent screen** (missing from original checklist):
+  - 🛠️ **Updated 2026-07-12:** Google renamed this section to **Google Auth Platform** in 2024 — same thing, just relocated. Navigate to **APIs & Services → Google Auth Platform**, split across four tabs: Branding, Audience, Data Access, Clients.
+  - **Branding tab:** app name, support email, home page, privacy policy link, terms of service link, authorized domain (your custom domain)
+  - **Audience tab:** choose **"External"** user type — Internal requires a Google Workspace org, which a single-owner account isn't part of
+  - 🛠️ **Audience tab, also:** add yourself as a **test user** — not in the original checklist, but required: External + Testing mode blocks sign-in for anyone not on this list, including you
+  - **Data Access tab:** add scope `https://www.googleapis.com/auth/business.manage` — if a justification field appears (Google requires one for sensitive/restricted scopes), have an explanation ready of how the scope will be used and why a narrower one isn't sufficient
   - **Do NOT submit for verification yet** — just save as "Testing" for now
+  - ⚙️ **Prep done:** paste-ready values for all of the above — app name, support email guidance, home page, privacy/ToS links, authorized domain, and a drafted scope justification — are in `phase4-oauth-consent-screen-guide.md`
 - [ ] **4.5** ⚠️ **Enable the required APIs in GCP Library** (do this BEFORE submitting the form):
   - My Business Account Management API
   - My Business Business Information API
@@ -121,6 +123,7 @@
   - Business contact information (use domain email if possible)
   - Google Cloud **Project Number** (not Project ID)
   - **Use Case description** — describe what the access will actually be used for (e.g., listing/syncing reviews, posting owner responses, managing location info) and how access is authorized (standard OAuth 2.0)
+  - ⚙️ **Prep done:** drafted and ready to paste — see `phase5-use-case-submission-guide.md` (first-party Mo'men Store framing, not RepuHub; includes the domain-live caveat and full submission walkthrough)
 - [ ] **5.4** Verify submission email matches the GBP profile owner/manager account
 - [ ] **5.5** ⚠️ **Screenshot the confirmation page** — Google doesn't always send a confirmation email
 
