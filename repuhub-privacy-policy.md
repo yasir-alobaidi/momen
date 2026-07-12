@@ -1,8 +1,8 @@
 # RepuHub Privacy Policy — Google API / OAuth Data Disclosure (DRAFT)
 
 > **Status:** First real draft — 2026-07-11. **Not yet published, not legal advice.**
-> **Scope note (see README §3.5.6):** This is *not* the same document as `privacy.html` in this repo. That page covers the Mo'men Store brochure site (used only as the qualifying GBP business for the Basic API Access request in Phase 5). This document instead covers **RepuHub's own product** — what RepuHub's customers see and agree to on RepuHub's OAuth consent screen when they connect their Google Business Profile.
-> **Where this needs to live:** Hosted on the same verified domain as RepuHub's OAuth consent screen home page — i.e. `repuhub.xyz` or `repuhub.ai` per the redirect URIs already configured in Phase 6.4 — **not** on `momenstore.com`.
+> **Scope note (see the "Scope" line at the top of `README.md`):** This is *not* the same document as `privacy.html` in this repo. That page covers the Mo'men Store brochure site (used only as the qualifying GBP business for the Basic API Access request in Phase 5). This document instead covers **RepuHub's own product** — what RepuHub's customers see and agree to on RepuHub's OAuth consent screen when they connect their Google Business Profile.
+> **Where this needs to live:** Hosted on the same verified domain as RepuHub's OAuth consent screen home page — i.e. `repuhub.xyz` or `repuhub.ai` per the redirect URIs configured in RepuHub's own project setup (tracked in RepuHub's own repo, not this one — see the Scope note above) — **not** on `momenstore.com`.
 > Every `[FILL IN: ...]` marker below needs a real answer from you before this is usable, and it needs a legal review before publishing (see closing note).
 
 ---
@@ -67,7 +67,7 @@ RepuHub is a business-to-business product intended for business owners and staff
 
 ## 10. Changes to This Policy
 
-We'll update this page as RepuHub's use of Google APIs changes, and — consistent with Google's requirements — we will not begin a new use of previously-collected data without first updating this policy and, where required, prompting affected users for consent. "Last updated" date: 2026-07-11 (update this whenever the content changes).
+We'll update this page as RepuHub's use of Google APIs changes, and — consistent with Google's requirements — we will not begin a new use of previously-collected data without first updating this policy and, where required, prompting affected users for consent. "Last updated" date: 2026-07-12 (update this whenever the content changes).
 
 ## 11. Governing Law
 
@@ -81,7 +81,7 @@ Questions about this policy or RepuHub's use of your Google data:
 
 ---
 
-> **Still outstanding before this is publishable (per README 3.5.6):**
+> **Still outstanding before this is publishable:**
 > 1. Every `[FILL IN: ...]` marker above — legal entity name/address, hosting/sub-processors, retention window, support contact, governing law
 > 2. Review by a licensed legal professional in whatever jurisdiction RepuHub is incorporated in (this draft is not legal advice and was not written by a lawyer)
-> 3. Publish it on the same verified domain as RepuHub's OAuth consent screen home page (`repuhub.xyz` / `repuhub.ai` — not `momenstore.com`), then link it from both that home page and the OAuth consent screen config before submitting for verification (Phase 6.6)
+> 3. Publish it on the same verified domain as RepuHub's OAuth consent screen home page (`repuhub.xyz` / `repuhub.ai` — not `momenstore.com`), then link it from both that home page and the OAuth consent screen config before submitting for verification (tracked in RepuHub's own repo — out of scope for this checklist, per the Scope note above)

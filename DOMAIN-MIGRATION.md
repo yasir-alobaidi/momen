@@ -2,7 +2,7 @@
 
 **Goal:** replace `https://yasir-alobaidi.github.io/momen/` with a real custom domain. This does **not** require leaving GitHub Pages as the host — GitHub Pages supports custom domains with free automatic HTTPS, which is the fastest path given the July 20 submission target.
 
-Placeholder domain used throughout this repo's new files (`CNAME`, `sitemap.xml`, `robots.txt`): `momenstore.com`. Find-and-replace it with whatever you actually buy.
+Placeholder domain used throughout this repo's new files (`sitemap.xml`, `robots.txt`): `momenstore.com`. Find-and-replace it with whatever you actually buy. `CNAME` isn't part of that find-and-replace set — it's not in the repo yet; step 2 below has you create it fresh, for reasons explained there.
 
 ---
 
@@ -11,7 +11,7 @@ Placeholder domain used throughout this repo's new files (`CNAME`, `sitemap.xml`
 - `.jo` reads as more locally authentic but Jordanian registrars typically require more verification paperwork; `.com` is faster to get live through any standard registrar (Namecheap, Cloudflare Registrar, GoDaddy, etc.) if you're racing the clock
 
 ## 2. Point it at GitHub Pages
-1. Commit the `CNAME` file (included in this batch, at the repo root) — first replace its contents with your real domain
+1. **Create** a `CNAME` file at the repo root containing just your real domain on a single line (e.g. `momenstore.com`) — it's intentionally not pre-built and included in this batch: a `CNAME` pointing at a domain whose DNS isn't configured yet makes GitHub Pages show a dead/broken redirect instead of your site, so it's created fresh only once you actually own the domain. Do that now, then continue with the DNS records below.
 2. At your DNS provider, add:
    - **Apex domain** (`momenstore.com`) → four **A** records:
      `185.199.108.153` · `185.199.109.153` · `185.199.110.153` · `185.199.111.153`
@@ -40,4 +40,4 @@ GitHub Pages is static hosting only — it can't send or receive mail, so you ne
 
 ---
 
-**Files in this batch that use the placeholder domain and need a find-and-replace before use:** `CNAME`, `sitemap.xml`, `robots.txt`.
+**Files in this batch that use the placeholder domain and need a find-and-replace before use:** `sitemap.xml`, `robots.txt`. (`CNAME` isn't in the batch — create it fresh per step 2 above once you own the domain, rather than find-and-replacing a placeholder version.)

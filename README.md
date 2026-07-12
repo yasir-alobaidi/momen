@@ -58,8 +58,9 @@
 - [ ] **3.5.1** Migrate off the GitHub Pages subdomain (duplicate of 2.1/2.2, elevated here because it's load-bearing for two separate things, not just "professional appearance"):
   - No domain-matched business email is possible on a `github.io` subdomain — Google's FAQ lists this as how you demonstrate legitimacy for Basic API Access
   - The OAuth consent screen (Phase 4.4) needs an authorized domain you can verify ownership of via Search Console — shared subdomains don't qualify
-  - ⚙️ **Prep done:** `DOMAIN-MIGRATION.md` (step-by-step runbook), `CNAME`, `sitemap.xml`, `robots.txt` in repo — all three files use `momenstore.com` as a placeholder. **Still needs you:** actually buying the domain (can't be done from here) — everything after that is copy-paste from the runbook.
+  - ⚙️ **Prep done:** `DOMAIN-MIGRATION.md` (step-by-step runbook), `sitemap.xml`, `robots.txt`, and `phase4-oauth-consent-screen-guide.md` (OAuth screen paste-ready values) in repo — `sitemap.xml`/`robots.txt` use `momenstore.com` as a placeholder. `CNAME` is deliberately *not* pre-built (see `DOMAIN-MIGRATION.md` §2 for why). **Still needs you:** actually buying the domain (can't be done from here) — everything after that is copy-paste from the runbook.
   - 🛠️ **Fixed 2026-07-11:** the runbook's content had actually been saved under the wrong filename, colliding with an unrelated document. `robots.txt` was also empty despite being listed as ready. Runbook content moved to `DOMAIN-MIGRATION.md` (its correct name, unchanged otherwise); `robots.txt` now actually contains the allow-all + sitemap rule the runbook describes.
+  - 🛠️ **Fixed 2026-07-12:** `phase4-oauth-consent-screen-guide.md` — referenced above and in Phase 4.4 as ready — had actually gone missing from the repo; restored. The `CNAME` line above was also stale (implied it was pre-built and just needed a find-and-replace); corrected to reflect it's created fresh after purchase on purpose — an unresolvable `CNAME` before DNS is configured causes a dead redirect instead of your site (see `phase5-use-case-submission-guide.md`, which flagged this first). Two smaller consistency fixes while in here: Phase 3.2's `attributes-checklist.md` reference had a casing mismatch, and `repuhub-privacy-policy.md` had a couple of dangling references to section numbers that no longer exist in this file — both corrected.
 
 ### Content fixes — do before submitting
 - [x] **3.5.2** Reconcile hours: confirmed 2026-07-11 that the split schedule (Mon-Wed 8AM–12PM; Thu-Sun 9AM–5PM) is what's actually current and matches the live GBP listing — the "every day 9:00 AM–10:00 PM" copy in `index.html` was the stale value. Updated the visible "Opening Hours" block and the JSON-LD `openingHoursSpecification` (now two entries, one per day-range) to match. Still worth a final check against the storefront hours plaque before submission (see 1.1).
@@ -93,7 +94,7 @@
 
 ### Phase 3: GBP Dashboard Updates (Days 57–58 / by July 17)
 - [ ] **3.1** Swap website link on GBP dashboard from GitHub Pages → new custom domain
-- [ ] **3.2** Add missing profile attributes (accessibility, parking, payment methods, Wi-Fi) — see `ATTRIBUTES-CHECKLIST.md` for a walkthrough to fill out ahead of time
+- [ ] **3.2** Add missing profile attributes (accessibility, parking, payment methods, Wi-Fi) — see `attributes-checklist.md` for a walkthrough to fill out ahead of time
 - [ ] **3.3** Upload high-quality photos: exterior (2-3), interior (2-3), products (3-5)
 - [ ] **3.4** Ensure 2-3 genuine customer reviews exist with professional owner responses
   - ⚙️ **Prep done:** reply templates for common review scenarios (positive, mixed, complaint types) are in `phase3-review-response-templates.md`, ready to adapt once real reviews are in — reviews themselves still need to be genuine, nothing to draft ahead of time there
