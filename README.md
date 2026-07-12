@@ -93,7 +93,7 @@
 
 ### Phase 3: GBP Dashboard Updates (Days 57–58 / by July 17)
 - [ ] **3.1** Swap website link on GBP dashboard from GitHub Pages → new custom domain
-- [ ] **3.2** Add missing profile attributes (accessibility, parking, payment methods, Wi-Fi)
+- [ ] **3.2** Add missing profile attributes (accessibility, parking, payment methods, Wi-Fi) — see `ATTRIBUTES-CHECKLIST.md` for a walkthrough to fill out ahead of time
 - [ ] **3.3** Upload high-quality photos: exterior (2-3), interior (2-3), products (3-5)
 - [ ] **3.4** Ensure 2-3 genuine customer reviews exist with professional owner responses
 - [ ] **3.5** Add business logo and cover photo if missing
