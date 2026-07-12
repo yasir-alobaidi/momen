@@ -42,7 +42,7 @@
 | Primary Phone | `07 9979 3446` | ✅ | Active local number |
 | Storefront Address | Ibrahim Bakr Street, Amman, JO | ✅ | Tied to Place ID |
 | Website URI | `https://yasir-alobaidi.github.io/momen/` | ⚠️ **Change** | Swap to custom HTTPS domain |
-| Regular Hours | Split Schedule (Mon-Wed 8AM-12PM; Thu-Sun 9AM-5PM) | ✅ | Confirmed current 2026-07-11 (see 3.5.2); still verify against physical signage (1.1) |
+| Regular Hours | 8AM–11PM daily; Fri 12PM–11PM | ✅ | Updated 2026-07-12 (see 3.5.2); still verify against physical signage (1.1) |
 | Business Description | Present | ✅ | 2-3 sentence overview |
 | Attributes | Not fully mapped | ⚠️ **Gap** | Add accessibility, Wi-Fi, etc. |
 | Visual Media | Needs review | ⚠️ **Gap** | Upload exterior, interior, product photos |
@@ -63,6 +63,7 @@
 
 ### Content fixes — do before submitting
 - [x] **3.5.2** Reconcile hours: confirmed 2026-07-11 that the split schedule (Mon-Wed 8AM–12PM; Thu-Sun 9AM–5PM) is what's actually current and matches the live GBP listing — the "every day 9:00 AM–10:00 PM" copy in `index.html` was the stale value. Updated the visible "Opening Hours" block and the JSON-LD `openingHoursSpecification` (now two entries, one per day-range) to match. Still worth a final check against the storefront hours plaque before submission (see 1.1).
+  - 🛠️ **Updated 2026-07-12:** hours changed again — now every day 8:00 AM–11:00 PM, except Friday 12:00 PM–11:00 PM. Updated the same two spots (`index.html` visible block + JSON-LD, still one entry for the six shared days and one for Friday). Same caveat as above still applies: confirm against the storefront plaque (1.1) and the live GBP listing before submitting, since GBP hours aren't updated by this repo.
 - [x] **3.5.3** Confirm address string: updated `index.html` (JSON-LD `streetAddress`, Store Info block, map card, footer) and `privacy.html` (contact block) — all 5 instances now read "Ibrahim Bakr Street" to match the ✅-confirmed Section 3 value. Still worth a final character-for-character check against the live listing itself before submission.
 - [x] **3.5.4** Complete footer NAP per 2.3: footer currently has business name + city only, no street address or phone. Full contact info exists in the "Store Information" section but isn't duplicated into the footer itself.
 - [x] **3.5.5** Add a Terms of Service page per 2.4. Created `terms.html`, mirroring `privacy.html`'s design system exactly (same tokens/layout/structure). Covers acceptable use, IP, third-party links, accuracy-of-info, no-warranty/liability, Jordan governing law, and contact — with the same "not legal advice, have a Jordan-licensed professional review it" note. Cross-linked from the footer of all three pages.
