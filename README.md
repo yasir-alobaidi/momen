@@ -1,15 +1,15 @@
 # Google Business Profile & API Access Master Checklist
 
-> **Last updated:** 2026-07-11  
-> **Status:** ▶ In progress — 9 days until submission window opens
+> **Last updated:** 2026-07-12  
+> **Status:** ▶ In progress — 8 days until submission window opens
 
 ## 1. Timeline & 60-Day Milestone Check
 
 | Milestone | Date |
 |---|---|
 | Official Verification Date | May 20, 2026 |
-| Current Assessment Date | **July 11, 2026** |
-| Total Days Active | **52 days** |
+| Current Assessment Date | **July 12, 2026** |
+| Total Days Active | **53 days** |
 | 60-day threshold crossed | **July 19, 2026** |
 | **Recommended submission date** | **July 20, 2026** (1-day buffer) |
 
@@ -65,6 +65,12 @@
 - [x] **3.5.3** Confirm address string: updated `index.html` (JSON-LD `streetAddress`, Store Info block, map card, footer) and `privacy.html` (contact block) — all 5 instances now read "Ibrahim Bakr Street" to match the ✅-confirmed Section 3 value. Still worth a final character-for-character check against the live listing itself before submission.
 - [x] **3.5.4** Complete footer NAP per 2.3: footer currently has business name + city only, no street address or phone. Full contact info exists in the "Store Information" section but isn't duplicated into the footer itself.
 - [x] **3.5.5** Add a Terms of Service page per 2.4. Created `terms.html`, mirroring `privacy.html`'s design system exactly (same tokens/layout/structure). Covers acceptable use, IP, third-party links, accuracy-of-info, no-warranty/liability, Jordan governing law, and contact — with the same "not legal advice, have a Jordan-licensed professional review it" note. Cross-linked from the footer of all three pages.
+
+### Mobile UX pass — completed 2026-07-12
+- [x] **3.5.7** `index.html` had no mobile navigation: `.nav-links` were hidden below 600px with nothing replacing them, so Shop/About Us/Find Us were unreachable from the nav bar on phones (only the "Visit Us" button and hero CTA still worked). Added a hamburger menu — slide-down panel using the same forest/amber tokens, all four nav items included.
+  - 🛠️ **Also fixed while in there:** the stats bar still read "9am–10pm · Every Day," a leftover from before 3.5.2's hours correction that directly contradicted the accurate split schedule shown two sections down and in the JSON-LD. Changed to "Open · Every Day" (still accurate — the Mon–Wed/Thu–Sun split covers all 7 days, just not that specific time range). Worth double-checking no other page has a similar stale copy of the old hours.
+  - Other mobile fixes: anchor links (`#shop`/`#why`/`#visit`) now account for the fixed nav's height so section headings aren't hidden underneath it when jumped to; the hero heading's forced line-break was causing a second, unpredictable wrap on narrow phones (~320–390px) — removed the break and let it reflow naturally at a smaller floor size; the stats bar's 5 items now sit in a fixed 2-column grid on mobile instead of wrapping unevenly.
+  - ⚠️ Built and checked without a live browser (this sandbox has no network path to download one) — verified via CSS cascade tracing and syntax validation instead of a visual screenshot. Give it a real look on a phone before relying on it.
 
 ### Decision needed — not resolved anywhere else in this doc
 - [ ] **3.5.6** Decide what privacy policy backs RepuHub's *own* production OAuth consent screen. Phase 6.6 currently assumes reusing momenstore.com's `privacy.html`, but that policy is explicitly scoped to a brochure site with no forms/accounts — it says nothing about OAuth, reviews, or business-location data. The Basic API Access request (Phase 5) is fine using Mo'men Store as the qualifying GBP; Google explicitly allows the qualifying profile to be the applicant's own business rather than the product itself. But the consent screen RepuHub's *customers* see needs a privacy policy that actually discloses RepuHub's data practices, hosted on the same domain as whatever home page is linked from it. Given Phase 6.4's redirect URIs already point at `repuhub.xyz` / `repuhub.ai`, this likely means a separate RepuHub-branded privacy policy — not momenstore.com's — needs drafting before 6.6.

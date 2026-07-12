@@ -45,6 +45,7 @@
     }
     .sec-title.lt { color: var(--wh); }
     .sec-sub { font-size: 0.96rem; font-weight: 300; color: var(--dim); line-height: 1.72; margin-top: 0.65rem; }
+    section[id] { scroll-margin-top: 90px; }
 
     /* ── REVEAL ANIMATION ─────────────────────────── */
     .rv { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
@@ -302,6 +303,43 @@
     .foot-link { color: rgba(255,255,255,.5); text-decoration: underline; text-underline-offset: 2px; transition: color .2s; }
     .foot-link:hover { color: var(--amber); }
 
+    /* ── MOBILE NAV ───────────────────────────────── */
+    .hamburger {
+      display: none;
+      flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+      width: 44px; height: 44px;
+      background: none; border: none; padding: 0; cursor: pointer;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--wh); border-radius: 2px;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: flex; flex-direction: column;
+      position: fixed; top: 0; left: 0; right: 0;
+      background: var(--forest);
+      padding: 5.4rem 1.5rem 1.5rem;
+      max-height: 0; overflow: hidden; opacity: 0; pointer-events: none;
+      transition: max-height .4s ease, opacity .3s ease;
+      z-index: 998;
+      box-shadow: 0 16px 40px rgba(0,0,0,.28);
+    }
+    .mobile-menu.open { max-height: 420px; opacity: 1; pointer-events: auto; }
+    .mm-link {
+      font-size: 1.05rem; font-weight: 500;
+      color: rgba(255,255,255,.85);
+      padding: .95rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      transition: color .2s;
+    }
+    .mm-link:hover { color: var(--amber-lt); }
+    .mm-cta { display: inline-block; align-self: flex-start; margin-top: 1.4rem; padding: .75rem 1.7rem; }
+
     /* ── RESPONSIVE ───────────────────────────────── */
     @media (max-width: 980px) {
       .hero-cards { display: none; }
@@ -312,10 +350,16 @@
     @media (max-width: 600px) {
       .wrap, .nav-in { padding: 0 1.25rem; }
       .nav-links { display: none; }
+      .nav-in > .nav-btn { display: none; }
+      .hamburger { display: flex; }
       .hero-in { padding: 8rem 1.25rem 4rem; }
+      .hero-h1 { font-size: clamp(1.9rem, 7.5vw, 2.5rem); }
+      .hero-h1 br { display: none; }
+      .hero-pill { font-size: .68rem; border-radius: 14px; line-height: 1.5; }
       .cats-grid { grid-template-columns: 1fr; }
-      .stats { gap: 1.25rem; padding: 1rem 1.25rem; }
+      .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem .75rem; padding: 1.5rem 1.25rem; }
       .stat-div { display: none; }
+      .stat:last-child { grid-column: 1 / -1; }
       footer { padding: 1.4rem 1.25rem; }
       .info-sec { padding: 3.5rem 0; }
       .cats-sec, .why-sec, .promise-sec { padding: 3.5rem 0; }
@@ -386,8 +430,18 @@
       <li><a href="#visit">Find Us</a></li>
     </ul>
     <a href="#visit" class="nav-btn">Visit Us</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#shop" class="mm-link">Shop</a>
+  <a href="#why" class="mm-link">About Us</a>
+  <a href="#visit" class="mm-link">Find Us</a>
+  <a href="#visit" class="nav-btn mm-cta">Visit Us</a>
+</div>
 
 <!-- ─── HERO ─────────────────────────────────────── -->
 <section class="hero">
@@ -440,7 +494,7 @@
   <div class="stat-div"></div>
   <div class="stat"><div class="stat-n">Daily</div><div class="stat-l">Restocked Shelves</div></div>
   <div class="stat-div"></div>
-  <div class="stat"><div class="stat-n">9am–10pm</div><div class="stat-l">Every Day</div></div>
+  <div class="stat"><div class="stat-n">Open</div><div class="stat-l">Every Day</div></div>
   <div class="stat-div"></div>
   <div class="stat"><div class="stat-n">WhatsApp</div><div class="stat-l">Easy Ordering</div></div>
   <div class="stat-div"></div>
@@ -635,6 +689,28 @@
       if (r.top < window.innerHeight) el.classList.add('on');
     });
   });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  function openMenu() {
+    hamburger.classList.add('open');
+    mobileMenu.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 600) closeMenu(); });
 </script>
 
 </body>
