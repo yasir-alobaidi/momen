@@ -1,7 +1,8 @@
 # Google Business Profile & API Access Master Checklist
 
 > **Last updated:** 2026-07-12  
-> **Status:** ▶ In progress — 8 days until submission window opens
+> **Status:** ▶ In progress — 8 days until submission window opens  
+> **Scope:** This repo covers Mo'men Store's own website and Google Business Profile compliance only — an independent project. Anything specific to a *consuming* application (its OAuth consent screen, its own privacy policy, redirect URIs, staging/mock config) belongs in that application's own repo, not here.
 
 ## 1. Timeline & 60-Day Milestone Check
 
@@ -56,9 +57,9 @@
 ### Blocking — do this first
 - [ ] **3.5.1** Migrate off the GitHub Pages subdomain (duplicate of 2.1/2.2, elevated here because it's load-bearing for two separate things, not just "professional appearance"):
   - No domain-matched business email is possible on a `github.io` subdomain — Google's FAQ lists this as how you demonstrate legitimacy for Basic API Access
-  - The OAuth consent screen (Phase 6.6) requires a home page on a domain you can verify ownership of via Search Console — shared subdomains don't qualify
+  - The OAuth consent screen (Phase 4.4) needs an authorized domain you can verify ownership of via Search Console — shared subdomains don't qualify
   - ⚙️ **Prep done:** `DOMAIN-MIGRATION.md` (step-by-step runbook), `CNAME`, `sitemap.xml`, `robots.txt` in repo — all three files use `momenstore.com` as a placeholder. **Still needs you:** actually buying the domain (can't be done from here) — everything after that is copy-paste from the runbook.
-  - 🛠️ **Fixed 2026-07-11:** the runbook's content had actually been saved under the wrong filename — it was sitting in `repuhub-privacy-policy.md`, colliding with the unrelated document 3.5.6 needs. `robots.txt` was also empty despite being listed as ready. Runbook content moved to `DOMAIN-MIGRATION.md` (its correct name, unchanged otherwise); `robots.txt` now actually contains the allow-all + sitemap rule the runbook describes. Flagging in case this same mix-up affected copies elsewhere.
+  - 🛠️ **Fixed 2026-07-11:** the runbook's content had actually been saved under the wrong filename, colliding with an unrelated document. `robots.txt` was also empty despite being listed as ready. Runbook content moved to `DOMAIN-MIGRATION.md` (its correct name, unchanged otherwise); `robots.txt` now actually contains the allow-all + sitemap rule the runbook describes.
 
 ### Content fixes — do before submitting
 - [x] **3.5.2** Reconcile hours: confirmed 2026-07-11 that the split schedule (Mon-Wed 8AM–12PM; Thu-Sun 9AM–5PM) is what's actually current and matches the live GBP listing — the "every day 9:00 AM–10:00 PM" copy in `index.html` was the stale value. Updated the visible "Opening Hours" block and the JSON-LD `openingHoursSpecification` (now two entries, one per day-range) to match. Still worth a final check against the storefront hours plaque before submission (see 1.1).
@@ -71,10 +72,6 @@
   - 🛠️ **Also fixed while in there:** the stats bar still read "9am–10pm · Every Day," a leftover from before 3.5.2's hours correction that directly contradicted the accurate split schedule shown two sections down and in the JSON-LD. Changed to "Open · Every Day" (still accurate — the Mon–Wed/Thu–Sun split covers all 7 days, just not that specific time range). Worth double-checking no other page has a similar stale copy of the old hours.
   - Other mobile fixes: anchor links (`#shop`/`#why`/`#visit`) now account for the fixed nav's height so section headings aren't hidden underneath it when jumped to; the hero heading's forced line-break was causing a second, unpredictable wrap on narrow phones (~320–390px) — removed the break and let it reflow naturally at a smaller floor size; the stats bar's 5 items now sit in a fixed 2-column grid on mobile instead of wrapping unevenly.
   - ⚠️ Built and checked without a live browser (this sandbox has no network path to download one) — verified via CSS cascade tracing and syntax validation instead of a visual screenshot. Give it a real look on a phone before relying on it.
-
-### Decision needed — not resolved anywhere else in this doc
-- [ ] **3.5.6** Decide what privacy policy backs RepuHub's *own* production OAuth consent screen. Phase 6.6 currently assumes reusing momenstore.com's `privacy.html`, but that policy is explicitly scoped to a brochure site with no forms/accounts — it says nothing about OAuth, reviews, or business-location data. The Basic API Access request (Phase 5) is fine using Mo'men Store as the qualifying GBP; Google explicitly allows the qualifying profile to be the applicant's own business rather than the product itself. But the consent screen RepuHub's *customers* see needs a privacy policy that actually discloses RepuHub's data practices, hosted on the same domain as whatever home page is linked from it. Given Phase 6.4's redirect URIs already point at `repuhub.xyz` / `repuhub.ai`, this likely means a separate RepuHub-branded privacy policy — not momenstore.com's — needs drafting before 6.6.
-  - 🛠️ **Corrected 2026-07-11:** the file meant to hold this draft (`repuhub-privacy-policy.md`) actually contained the domain-migration runbook instead (see the fix noted under 3.5.1) — this decision was still fully open going into today, despite this item's sub-bullet previously implying a draft existed. A real first draft now lives at `repuhub-privacy-policy.md`, scoped to RepuHub's actual OAuth data access (reviews, business location, owner responses via `business.manage`) and including the Google-required Limited Use disclosure language. **Still needs you:** every `[FILL IN: ...]` marker in the doc (legal entity + address, hosting/sub-processors, retention window, support contact, governing law), a legal review, and publishing it on the same verified domain as RepuHub's OAuth consent-screen home page (`repuhub.xyz`/`repuhub.ai` — not `momenstore.com`).
 
 ---
 
@@ -122,7 +119,7 @@
 - [ ] **5.3** Fill in:
   - Business contact information (use domain email if possible)
   - Google Cloud **Project Number** (not Project ID)
-  - **Use Case description** — example: *"RepuHub is a multi-tenant SaaS platform that helps local businesses manage and respond to Google reviews. We need API access to: (1) list and sync Google Business Profile reviews for our customers, (2) post owner responses to reviews via the API, and (3) manage business location information. Our platform serves verified business owners who authorize access via standard OAuth 2.0."*
+  - **Use Case description** — describe what the access will actually be used for (e.g., listing/syncing reviews, posting owner responses, managing location info) and how access is authorized (standard OAuth 2.0)
 - [ ] **5.4** Verify submission email matches the GBP profile owner/manager account
 - [ ] **5.5** ⚠️ **Screenshot the confirmation page** — Google doesn't always send a confirmation email
 
@@ -135,14 +132,7 @@
   - Google Business Profile Business Information API
   - Account Management API
 - [ ] **6.3** Generate production OAuth 2.0 Client ID credentials
-- [ ] **6.4** ⚠️ **Configure authorized redirect URIs** in the OAuth credential:
-  - Dev: `http://localhost:8000/api/v1/integrations/google/oauth/callback/`
-  - Staging: `https://api.repuhub.xyz/api/v1/integrations/google/oauth/callback/`
-  - Prod: `https://api.repuhub.ai/api/v1/integrations/google/oauth/callback/`
-- [ ] **6.5** ⚠️ **Remove GBP mock env vars** from `deploy/.env.staging` once real credentials work (see `CLAUDE.md` §Removing the mock)
-- [ ] **6.6** ⚠️ **Submit OAuth consent screen for verification** (required for production use beyond 100 users):
-  - Requires privacy policy URL — draft now at `repuhub-privacy-policy.md`, see **3.5.6** for what's still outstanding before it's publishable
-  - Verification can take 4-6 weeks — submit early
+  - Redirect URIs, consent-screen verification, and any app-side env/config changes live in whichever application's own repo will consume this access — out of scope here.
 
 ---
 
@@ -157,18 +147,3 @@
 | "Use case unclear" | Rewrite description with more specifics about review management |
 | "Free subdomain" | Migrate to custom domain (see Phase 2) |
 | Generic / unclear | Submit appeal via [GBP API support form](https://support.google.com/business/gethelp), reference your Project Number |
-| **Alternative if delayed:** | Continue using GBP mock on staging; launch US market with mock; swap to real API once approved. No user-facing impact since GBP integration works identically. |
-
----
-
-## 6. Post-Approval Checklist (NEW)
-
-> ⚠️ Missing from original checklist — added 2026-07-11
-
-- [ ] Test real Google OAuth flow end-to-end on staging
-- [ ] Verify `accounts.list`, `locations.list`, `reviews.list` all return real data
-- [ ] Test posting a reply to a real review (on a test/low-risk review)
-- [ ] Compare real API response shapes vs. GBP mock — fix any mismatches
-- [ ] Monitor quota usage for first 24 hours (stay well under 300 QPM)
-- [ ] Set up Google Cloud Monitoring alerts for quota approaching limits
-- [ ] Document the real vs. mock differences (if any) in `CLAUDE.md`
