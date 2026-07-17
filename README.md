@@ -89,18 +89,16 @@
 - [x] **2.2** Route landing page to custom domain with SSL — live, HTTPS confirmed ✅ (2026-07-17)
 - [x] **2.3** Add NAP data (exact business name, address, phone) in the landing page footer
 - [x] **2.4** Add Privacy Policy and Terms of Service pages (even placeholder — required for OAuth consent screen) — both live: `privacy.html`, `terms.html`
-- [ ] **2.5** Submit sitemap to Google Search Console for faster indexing — `sitemap.xml` + `robots.txt` are in the repo and use the real domain now (no placeholder swap needed) — actual Search Console submission still needs doing
-- [ ] **2.6** Validate indexing: `site:momenstore.com` returns nothing yet (expected for a brand-new domain) — do 2.5 first, recheck in a few days
+- [x] **2.5** Submit sitemap to Google Search Console for faster indexing — submitted ✅ (2026-07-17)
+- [ ] **2.6** Validate indexing: `site:momenstore.com` — check again in a few days; doesn't block submission either way (Google's review needs the site live, not indexed)
 
 ### Phase 3: GBP Dashboard Updates (Days 57–58 / by July 17)
 - [x] **3.1** Swap website link on GBP dashboard from GitHub Pages → new custom domain ✅ (2026-07-17)
-- [ ] **3.2** Add missing profile attributes (accessibility, parking, payment methods, Wi-Fi) — see `attributes-checklist.md` for a walkthrough to fill out ahead of time
-  - 🛠️ **Decided 2026-07-12:** all values confirmed and marked in `attributes-checklist.md` — free street parking (no dedicated lot), no accessibility features, cards/NFC/cash all accepted, no Wi-Fi, in-store shopping + WhatsApp delivery (confirmed as a standing service, not just inquiries). Nothing left to decide — this line stays open until it's actually toggled live at the dashboard.
-- [ ] **3.3** Upload high-quality photos: exterior (2-3), interior (2-3), products (3-5) — none yet as of 2026-07-17, planned soon
+- [x] **3.2** Add missing profile attributes (accessibility, parking, payment methods, Wi-Fi) — toggled live at the dashboard ✅ (2026-07-17)
+- [~] **3.3** Upload high-quality photos — deprioritized, not required for Basic API Access (see 3.5 note); pick up post-submission if time allows
 - [x] **3.4** Ensure 2-3 genuine customer reviews exist with professional owner responses — done: 5 reviews, all answered ✅ (2026-07-17)
   - ⚙️ **Prep done:** reply templates for common review scenarios (positive, mixed, complaint types) are in `phase3-review-response-templates.md`
-- [ ] **3.5** Add business logo and cover photo if missing
-  - 🛠️ **Note 2026-07-12:** not a hard requirement for Basic API Access — Google's official prerequisites only require a verified 60+ day profile and a business website; a "fully complete" profile (logo included) is recommended for a smoother review, not gating. Fine to deprioritize until after submission if no logo exists yet.
+- [~] **3.5** Add business logo and cover photo if missing — **not required, deprioritized.** Confirmed not gating for Basic API Access per Google's own prerequisites (verified 60+ day profile + business website is all that's required).
 
 ### Phase 4: Google Cloud Environment (Days 58–59 / by July 18)
 - [ ] **4.1** Log into GCP Console with the **Owner/Manager** Google account of the GBP

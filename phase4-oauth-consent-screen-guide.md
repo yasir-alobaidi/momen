@@ -20,11 +20,11 @@ Google renamed "OAuth consent screen" to **Google Auth Platform** in 2024. It's 
 | Field | Value |
 |---|---|
 | App name | Mo'men Store Business Profile Manager |
-| User support email | `info@momenstore.com` once that mailbox exists, otherwise the GBP owner/manager's own Google account email |
-| Application home page | `https://momenstore.com` *(blocked until domain is live)* |
+| User support email | `contact@momenstore.com` |
+| Application home page | `https://momenstore.com` |
 | Privacy policy link | `https://momenstore.com/privacy.html` |
 | Terms of service link | `https://momenstore.com/terms.html` |
-| Authorized domain | `momenstore.com` *(needs Search Console verification first)* |
+| Authorized domain | `momenstore.com` |
 
 ## Audience tab
 
