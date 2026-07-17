@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://momenstore.com/sitemap.xml
+Sitemap: https://momenstroe.com/sitemap.xml

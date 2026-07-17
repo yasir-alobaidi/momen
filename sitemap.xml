@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- PLACEHOLDER DOMAIN: replace every "momenstore.com" below with your real domain before uploading. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://momenstore.com/</loc>
+    <loc>https://momenstroe.com/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://momenstore.com/privacy.html</loc>
+    <loc>https://momenstroe.com/privacy.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://momenstore.com/terms.html</loc>
+    <loc>https://momenstroe.com/terms.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
