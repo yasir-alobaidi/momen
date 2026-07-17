@@ -1,7 +1,7 @@
 # Google Business Profile & API Access Master Checklist
 
-> **Last updated:** 2026-07-14  
-> **Status:** ▶ In progress — 6 days until submission window opens  
+> **Last updated:** 2026-07-17  
+> **Status:** ▶ In progress — 3 days until submission window opens  
 > **Scope:** This repo covers Mo'men Store's own website and Google Business Profile compliance only — an independent project. Anything specific to a *consuming* application (its OAuth consent screen, its own privacy policy, redirect URIs, staging/mock config) belongs in that application's own repo, not here.
 
 ## 1. Timeline & 60-Day Milestone Check
@@ -9,8 +9,8 @@
 | Milestone | Date |
 |---|---|
 | Official Verification Date | May 20, 2026 |
-| Current Assessment Date | **July 14, 2026** |
-| Total Days Active | **55 days** |
+| Current Assessment Date | **July 17, 2026** |
+| Total Days Active | **58 days** |
 | 60-day threshold crossed | **July 19, 2026** |
 | **Recommended submission date** | **July 20, 2026** (1-day buffer) |
 
@@ -41,12 +41,12 @@
 | Primary Category | `Convenience Store` | ✅ | Specific category, good |
 | Primary Phone | `07 9979 3446` | ✅ | Active local number |
 | Storefront Address | Ibrahim Bakr Street, Amman, JO | ✅ | Tied to Place ID |
-| Website URI | `https://yasir-alobaidi.github.io/momen/` | ⚠️ **Change** | Swap to custom HTTPS domain |
+| Website URI | `https://momenstore.com` | ✅ | Live, HTTPS confirmed, GBP dashboard link swapped (2026-07-17) |
 | Regular Hours | 8AM–11PM daily; Fri 12PM–11PM | ✅ | Updated 2026-07-12 (see 3.5.2); still verify against physical signage (1.1) |
 | Business Description | Present | ✅ | 2-3 sentence overview |
 | Attributes | Not fully mapped | ⚠️ **Gap** | Add accessibility, Wi-Fi, etc. |
 | Visual Media | Needs review | ⚠️ **Gap** | Upload exterior, interior, product photos |
-| Reviews & Engagement | Active status | ⚠️ **Gap** | Need 2-3 genuine reviews with owner responses |
+| Reviews & Engagement | 5 reviews, all answered | ✅ | Done (2026-07-17) — meets/exceeds the 2-3 minimum |
 
 ---
 
@@ -55,7 +55,7 @@
 > ⚠️ Added 2026-07-11 — findings from reviewing `index.html` / `privacy.html` against this checklist and current Google documentation (developers.google.com/my-business, developers.google.com/identity/protocols/oauth2). Content/design work is solid; gaps below are what's standing between this and submission.
 
 ### Blocking — do this first
-- [ ] **3.5.1** Migrate off the GitHub Pages subdomain (duplicate of 2.1/2.2, elevated here because it's load-bearing for two separate things, not just "professional appearance"):
+- [x] **3.5.1** Migrate off the GitHub Pages subdomain — ✅ **Done 2026-07-17.** `momenstore.com` purchased, DNS pointed at GitHub Pages, `CNAME` added, HTTPS enforced and confirmed live. `contact@momenstore.com` set up via Cloudflare Email Routing. GBP dashboard website link swapped (3.1). Original blocking rationale, kept for history:
   - No domain-matched business email is possible on a `github.io` subdomain — Google's FAQ lists this as how you demonstrate legitimacy for Basic API Access
   - The OAuth consent screen (Phase 4.4) needs an authorized domain you can verify ownership of via Search Console — shared subdomains don't qualify
   - ⚙️ **Prep done:** `DOMAIN-MIGRATION.md` (step-by-step runbook), `sitemap.xml`, `robots.txt`, and `phase4-oauth-consent-screen-guide.md` (OAuth screen paste-ready values) in repo — `sitemap.xml`/`robots.txt` use `momenstore.com` as a placeholder. `CNAME` is deliberately *not* pre-built (see `DOMAIN-MIGRATION.md` §2 for why). **Still needs you:** actually buying the domain (can't be done from here) — everything after that is copy-paste from the runbook.
@@ -85,20 +85,20 @@
 - [ ] **1.3** Take timestamped photos of storefront showing sign + hours (useful if Google requests proof)
 
 ### Phase 2: Web Compliance & Custom Domain (Days 54–57 / by July 16)
-- [ ] **2.1** Purchase custom domain (e.g., `momenstore.com` or `momenstore.jo`) — see `DOMAIN-MIGRATION.md` for the full runbook
-- [ ] **2.2** Route landing page to custom domain with SSL (enforce HTTPS) — covered in `DOMAIN-MIGRATION.md` §2
+- [x] **2.1** Purchase custom domain — `momenstore.com` ✅ (2026-07-17)
+- [x] **2.2** Route landing page to custom domain with SSL — live, HTTPS confirmed ✅ (2026-07-17)
 - [x] **2.3** Add NAP data (exact business name, address, phone) in the landing page footer
 - [x] **2.4** Add Privacy Policy and Terms of Service pages (even placeholder — required for OAuth consent screen) — both live: `privacy.html`, `terms.html`
-- [ ] **2.5** Submit sitemap to Google Search Console for faster indexing — `sitemap.xml` + `robots.txt` ready in repo (placeholder domain); submission itself needs Search Console access once the domain is live
-- [ ] **2.6** Validate indexing: `site:yourcustomdomain.com` returns results
+- [ ] **2.5** Submit sitemap to Google Search Console for faster indexing — `sitemap.xml` + `robots.txt` are in the repo and use the real domain now (no placeholder swap needed) — actual Search Console submission still needs doing
+- [ ] **2.6** Validate indexing: `site:momenstore.com` returns nothing yet (expected for a brand-new domain) — do 2.5 first, recheck in a few days
 
 ### Phase 3: GBP Dashboard Updates (Days 57–58 / by July 17)
-- [ ] **3.1** Swap website link on GBP dashboard from GitHub Pages → new custom domain
+- [x] **3.1** Swap website link on GBP dashboard from GitHub Pages → new custom domain ✅ (2026-07-17)
 - [ ] **3.2** Add missing profile attributes (accessibility, parking, payment methods, Wi-Fi) — see `attributes-checklist.md` for a walkthrough to fill out ahead of time
   - 🛠️ **Decided 2026-07-12:** all values confirmed and marked in `attributes-checklist.md` — free street parking (no dedicated lot), no accessibility features, cards/NFC/cash all accepted, no Wi-Fi, in-store shopping + WhatsApp delivery (confirmed as a standing service, not just inquiries). Nothing left to decide — this line stays open until it's actually toggled live at the dashboard.
-- [ ] **3.3** Upload high-quality photos: exterior (2-3), interior (2-3), products (3-5)
-- [ ] **3.4** Ensure 2-3 genuine customer reviews exist with professional owner responses
-  - ⚙️ **Prep done:** reply templates for common review scenarios (positive, mixed, complaint types) are in `phase3-review-response-templates.md`, ready to adapt once real reviews are in — reviews themselves still need to be genuine, nothing to draft ahead of time there
+- [ ] **3.3** Upload high-quality photos: exterior (2-3), interior (2-3), products (3-5) — none yet as of 2026-07-17, planned soon
+- [x] **3.4** Ensure 2-3 genuine customer reviews exist with professional owner responses — done: 5 reviews, all answered ✅ (2026-07-17)
+  - ⚙️ **Prep done:** reply templates for common review scenarios (positive, mixed, complaint types) are in `phase3-review-response-templates.md`
 - [ ] **3.5** Add business logo and cover photo if missing
   - 🛠️ **Note 2026-07-12:** not a hard requirement for Basic API Access — Google's official prerequisites only require a verified 60+ day profile and a business website; a "fully complete" profile (logo included) is recommended for a smoother review, not gating. Fine to deprioritize until after submission if no logo exists yet.
 

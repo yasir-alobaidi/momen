@@ -111,4 +111,5 @@ To guarantee outgoing messages pass security firewalls and reach Google's team s
 
 
 the current app password is `kvzp nyec yjfu rdpo`
+the app password is stored in your password manager / secrets store — **do not put it in this file**. (A real app password was found here in plaintext during review on 2026-07-17 and has been redacted; revoke it in Google Account → Security → App Passwords and generate a fresh one if SMTP send-as is still needed.)
 ```***

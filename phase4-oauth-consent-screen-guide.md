@@ -11,9 +11,9 @@ Google renamed "OAuth consent screen" to **Google Auth Platform** in 2024. It's 
 
 ---
 
-## ⚠️ Same domain dependency as Phase 5
+## ✅ Domain dependency cleared
 
-Two fields below (home page, authorized domain) need `momenstore.com` live and verified in Search Console — Google requires the authorized domain to be one you've verified ownership of, and the home page must be the app's real public page, not a placeholder. Until the domain is live, fill in everything else and leave those two for last; don't paste the `github.io` URL in as a stand-in.
+`momenstore.com` is live — the home page and authorized domain fields below can be filled in as-is now. (Still add/verify the domain in Search Console per `DOMAIN-MIGRATION.md` §4 before submitting the consent screen, since Google checks ownership verification.)
 
 ## Branding tab — paste-ready values
 

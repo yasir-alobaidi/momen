@@ -1,5 +1,7 @@
 # Domain Migration Runbook (3.5.1 / Phase 2)
 
+> ✅ **Done — 2026-07-17.** `momenstore.com` purchased and live via GitHub Pages custom domain, HTTPS enforced, `CNAME` in place, `contact@momenstore.com` set up via Cloudflare Email Routing. Kept below for reference/history.
+
 **Goal:** replace `https://yasir-alobaidi.github.io/momen/` with a real custom domain. This does **not** require leaving GitHub Pages as the host — GitHub Pages supports custom domains with free automatic HTTPS, which is the fastest path given the July 20 submission target.
 
 Placeholder domain used throughout this repo's new files (`sitemap.xml`, `robots.txt`): `momenstore.com`. Find-and-replace it with whatever you actually buy. `CNAME` isn't part of that find-and-replace set — it's not in the repo yet; step 2 below has you create it fresh, for reasons explained there.

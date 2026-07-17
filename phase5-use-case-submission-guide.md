@@ -5,12 +5,9 @@
 
 ---
 
-## ⚠️ Read this before you paste anything in
+## ✅ Domain is live — use the text as written
 
-The use case text below states the landing page is live at `momenstore.com`. As of July 12, that's not true yet — the domain hasn't been purchased, and the CNAME was just removed to stop the dead redirect. Two scenarios by July 20:
-
-- **If momenstore.com is live and indexed by then** → use the text exactly as written below.
-- **If it's still not live** → don't just swap in the `github.io` URL and submit anyway. Your own `README.md` (Section 2B) notes that Google Trust & Safety frequently rejects free-subdomain submissions outright — editing the sentence doesn't fix that, only finishing the domain migration does. If you're close to the 20th with no domain yet, it's worth pushing the submission date back a few days rather than submitting from a subdomain and risking a straight rejection.
+`momenstore.com` is confirmed live and HTTPS. Use the use-case text below as-is. (Search Console indexing is still catching up — that doesn't block submission, Google's review doesn't require the site be indexed, just live and matching NAP.)
 
 ---
 
