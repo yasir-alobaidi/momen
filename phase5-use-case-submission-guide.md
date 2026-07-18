@@ -28,14 +28,15 @@ This is first-party for Mo'men Store only, no RepuHub framing — keep it that w
 ## Submission steps — July 20
 
 1. **Confirm the 60-day threshold has passed.** It crosses July 19; submitting on the 20th keeps the 1-day buffer already built into your timeline.
-2. Go to the [GBP API Contact Form](https://docs.google.com/forms/d/e/1FAIpQLSe3sEsc6R-DNF24gPaINV6C6IFNvC5mGqF5WL7MxqJA5cYrMg/viewform).
-3. Select **"Application for Basic API Access."**
-4. Fill in business contact info — use `info@momenstore.com` if that mailbox exists by then; otherwise the GBP owner/manager's regular Google account email.
-5. Enter your **Google Cloud Project Number** (not the Project ID) — copy it from the GCP Console dashboard (Phase 4.2).
-6. Paste the Use Case Description above into the use-case field, adjusting the domain sentence per the warning at the top if needed.
-7. **Double-check the email you're submitting with matches the GBP profile's owner/manager account** — this is one of the things Google checks.
-8. Submit.
-9. **Screenshot the confirmation page immediately.** Google doesn't reliably send a confirmation email, so this screenshot is your only record of submission.
+2. **Confirm you're signed in as the GBP Owner, not a Manager.** Google's API team bounces submissions made from a manager-level account — this isn't documented anywhere official, it's a known pattern from people who've been through the process.
+3. Go to the [GBP API Contact Form](https://support.google.com/business/contact/api_default).
+4. Select **"Application for Basic API Access."**
+5. Fill in business contact info — use `contact@momenstore.com` for the business contact field, and the GBP Owner's actual Google Account email for anything that must match the Owner's sign-in identity (see step 2).
+6. Enter your **Google Cloud Project Number** (not the Project ID) — copy it from the GCP Console dashboard (Phase 4.2).
+7. Paste the Use Case Description above into the use-case field, adjusting the domain sentence per the warning at the top if needed.
+8. **Double-check the email you're submitting with matches the GBP profile's Owner account** — this is one of the things Google checks.
+9. Submit.
+10. **Screenshot the confirmation page immediately.** Google doesn't reliably send a confirmation email, so this screenshot is your only record of submission.
 
 ---
 

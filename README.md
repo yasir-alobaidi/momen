@@ -101,10 +101,10 @@
 - [~] **3.5** Add business logo and cover photo if missing — **not required, deprioritized.** Confirmed not gating for Basic API Access per Google's own prerequisites (verified 60+ day profile + business website is all that's required).
 
 ### Phase 4: Google Cloud Environment (Days 58–59 / by July 18)
-- [ ] **4.1** Log into GCP Console with the **Owner/Manager** Google account of the GBP
-- [ ] **4.2** Create new project (e.g., `momen-store`) — copy **Project Number** from dashboard
-- [ ] **4.3** Enable Google Cloud Billing (link valid payment method — required even for free tiers)
-- [ ] **4.4** ⚠️ **Set up the OAuth consent screen** (missing from original checklist):
+- [x] **4.1** Log into GCP Console with the **Owner** Google account of the GBP — ✅ (2026-07-18). ⚠️ **Must be Owner, not Manager** — Google's API team bounces submissions made from a manager-level account. Confirm this is the actual GBP Owner before Phase 5.
+- [x] **4.2** Create new project (`momen-store`) — copy **Project Number** from dashboard ✅ (2026-07-18)
+- [x] **4.3** Enable Google Cloud Billing (linked card) ✅ (2026-07-18)
+- [x] **4.4** ⚠️ **Set up the OAuth consent screen** — ✅ (2026-07-18). Confirm: support email + test user were set to the real GBP Owner Google Account (not `contact@momenstore.com`, which isn't a Google Account — see `phase4-oauth-consent-screen-guide.md`).
   - 🛠️ **Updated 2026-07-12:** Google renamed this section to **Google Auth Platform** in 2024 — same thing, just relocated. Navigate to **APIs & Services → Google Auth Platform**, split across four tabs: Branding, Audience, Data Access, Clients.
   - **Branding tab:** app name, support email, home page, privacy policy link, terms of service link, authorized domain (your custom domain)
   - **Audience tab:** choose **"External"** user type — Internal requires a Google Workspace org, which a single-owner account isn't part of
@@ -112,21 +112,21 @@
   - **Data Access tab:** add scope `https://www.googleapis.com/auth/business.manage` — if a justification field appears (Google requires one for sensitive/restricted scopes), have an explanation ready of how the scope will be used and why a narrower one isn't sufficient
   - **Do NOT submit for verification yet** — just save as "Testing" for now
   - ⚙️ **Prep done:** paste-ready values for all of the above — app name, support email guidance, home page, privacy/ToS links, authorized domain, and a drafted scope justification — are in `phase4-oauth-consent-screen-guide.md`
-- [ ] **4.5** ⚠️ **Enable the required APIs in GCP Library** (do this BEFORE submitting the form):
+- [x] **4.5** ⚠️ **Enable the required APIs in GCP Library** ✅ (2026-07-18):
   - My Business Account Management API
   - My Business Business Information API
   - Google My Business API (v4, for reviews)
   - My Business Notifications API
 
 ### Phase 5: Submit Access Request (Day 60+ / **July 20, 2026**)
-- [ ] **5.1** Navigate to the official [GBP API Contact Form](https://docs.google.com/forms/d/e/1FAIpQLSe3sEsc6R-DNF24gPaINV6C6IFNvC5mGqF5WL7MxqJA5cYrMg/viewform)
+- [ ] **5.1** Navigate to the official [GBP API Contact Form](https://support.google.com/business/contact/api_default)
 - [ ] **5.2** Select **"Application for Basic API Access"**
 - [ ] **5.3** Fill in:
   - Business contact information (use domain email if possible)
   - Google Cloud **Project Number** (not Project ID)
   - **Use Case description** — describe what the access will actually be used for (e.g., listing/syncing reviews, posting owner responses, managing location info) and how access is authorized (standard OAuth 2.0)
   - ⚙️ **Prep done:** drafted and ready to paste — see `phase5-use-case-submission-guide.md` (first-party Mo'men Store framing, not RepuHub; includes the domain-live caveat and full submission walkthrough)
-- [ ] **5.4** Verify submission email matches the GBP profile owner/manager account
+- [ ] **5.4** Verify submission email matches the GBP profile's **Owner** account specifically — Google's API team bounces submissions made from a manager-level account, not just any authorized email
 - [ ] **5.5** ⚠️ **Screenshot the confirmation page** — Google doesn't always send a confirmation email
 
 ### Phase 6: Monitoring & Activation (Post-Submission)
