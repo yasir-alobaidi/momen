@@ -17,10 +17,20 @@ Google renamed "OAuth consent screen" to **Google Auth Platform** in 2024. It's 
 
 ## Branding tab — paste-ready values
 
+## ⚠️ Support email / test user must be a real Google Account
+
+`contact@momenstore.com` is a Cloudflare forwarding rule, not a Google Account — Google's picker won't offer it as support email, and it can't be added as a test user either, since both fields require an actual Google identity that can sign in. **This has no bearing on GBP API approval itself** — Google's review criteria (verified 60+ day GBP, real business website, clear use case, correct scopes, working consent screen) don't check which specific email is in this field. It's a functional requirement only.
+
+**Use instead:** the actual Google Account logged into GCP (the GBP owner/manager's Gmail/Google account) for both:
+- **User support email** → select it from the dropdown (only real option without Workspace)
+- **Test users** → add that same account
+
+`contact@momenstore.com` still belongs on the site itself as the public-facing contact address (already added to `index.html`) — that's a separate, unrelated thing from this GCP field.
+
 | Field | Value |
 |---|---|
 | App name | Mo'men Store Business Profile Manager |
-| User support email | `contact@momenstore.com` |
+| User support email | The GBP owner/manager's real Google Account email (see note above — not `contact@momenstore.com`) |
 | Application home page | `https://momenstore.com` |
 | Privacy policy link | `https://momenstore.com/privacy.html` |
 | Terms of service link | `https://momenstore.com/terms.html` |
