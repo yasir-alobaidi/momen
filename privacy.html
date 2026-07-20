@@ -31,9 +31,8 @@
     /* nav */
     nav { background: var(--forest); padding: 1.1rem 0; }
     .nav-in { display: flex; align-items: center; justify-content: space-between; max-width: 1160px; margin: 0 auto; padding: 0 2.5rem; }
-    .logo { display: flex; flex-direction: column; line-height: 1; }
-    .logo-en { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: var(--wh); }
-    .logo-ar { font-family: 'Noto Kufi Arabic', sans-serif; font-size: .8rem; font-weight: 700; color: var(--amber); direction: rtl; margin-top: .1rem; }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 54px; width: auto; display: block; }
     .nav-btn { background: var(--amber); color: var(--forest); padding: .5rem 1.3rem; border-radius: 100px; font-size: .84rem; font-weight: 600; text-decoration: none; transition: background .2s, transform .2s; }
     .nav-btn:hover { background: var(--amber-lt); transform: scale(1.04); }
 
@@ -85,8 +84,7 @@
 <nav>
   <div class="nav-in">
     <div class="logo">
-      <span class="logo-en">Mo'men Store</span>
-      <span class="logo-ar" lang="ar">مؤمن ستور</span>
+      <img src="assets/logo-dark.svg" alt="Mo'men Store · مؤمن ستور">
     </div>
     <a href="index.html" class="nav-btn">Back to Store</a>
   </div>

@@ -66,9 +66,8 @@
       display: flex; align-items: center; justify-content: space-between;
       max-width: 1160px; margin: 0 auto; padding: 0 2.5rem;
     }
-    .logo { display: flex; flex-direction: column; line-height: 1; }
-    .logo-en { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: var(--wh); }
-    .logo-ar { font-family: 'Noto Kufi Arabic', sans-serif; font-size: .8rem; font-weight: 700; color: var(--amber); direction: rtl; margin-top: .1rem; }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 54px; width: auto; display: block; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-size: .875rem; font-weight: 500; color: rgba(255,255,255,.78); transition: color .2s; letter-spacing: .01em; }
     .nav-links a:hover { color: var(--amber-lt); }
@@ -424,8 +423,7 @@
 <nav id="nav">
   <div class="nav-in">
     <div class="logo">
-      <span class="logo-en">Mo'men Store</span>
-      <span class="logo-ar" lang="ar">مؤمن ستور</span>
+      <img src="assets/logo-dark.svg" alt="Mo'men Store · مؤمن ستور">
     </div>
     <ul class="nav-links">
       <li><a href="#shop">Shop</a></li>
